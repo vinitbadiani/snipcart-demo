@@ -21,7 +21,7 @@ const genre_top_movies: Record<string,top_movies[]> = {
 export default function Home() {
   return (
     <div>
-      <h1>Top Movies by Genre</h1>
+      <h1>Top Movies by Genre (demo)</h1>
       <br/>      
       {Object.entries(genre_top_movies).map(([genre,top_movies])=>(        
         <div key={genre}>
