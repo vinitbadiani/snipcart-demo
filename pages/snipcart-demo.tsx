@@ -7,7 +7,7 @@ export default function SnipcartDemo() {
 
   return (
     <>
-      {/* Snipcart Loader */}
+      {/* ✅ Load Snipcart JS & CSS */}
       <Script
         src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"
         strategy="afterInteractive"
@@ -17,28 +17,30 @@ export default function SnipcartDemo() {
         href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css"
       />
 
-      {/* Static product metadata so Snipcart crawler can validate the product */}
-      <div
-        hidden
-        id="product-test-item-1"
+      {/* ✅ Static product definition — used by Snipcart crawler */}
+      <button
+        style={{ display: "none" }}
+        className="snipcart-add-item"
         data-item-id="test-item-1"
         data-item-name="Test Product"
         data-item-price="10.00"
         data-item-url="/snipcart-demo"
-      ></div>
+      >
+        Hidden Add to Cart
+      </button>
 
-      {/* Page Content */}
+      {/* ✅ Page Content */}
       <div className="min-h-screen flex flex-col items-center justify-center py-16 px-4">
         <h1 className="text-2xl font-bold mb-6">Snipcart Demo</h1>
 
-        {/* View Cart */}
+        {/* ✅ View Cart */}
         <button
           className="snipcart-checkout snipcart-summary bg-zinc-800 text-white px-4 py-2 rounded mb-6 flex items-center gap-2"
         >
           🛒 View Cart (<span className="snipcart-items-count"></span>)
         </button>
 
-        {/* Open modal */}
+        {/* ✅ Open modal */}
         <button
           className="bg-blue-600 text-white px-4 py-2 rounded"
           onClick={() => setIsModalOpen(true)}
@@ -46,7 +48,7 @@ export default function SnipcartDemo() {
           Add Sample Item
         </button>
 
-        {/* Modal */}
+        {/* ✅ Modal */}
         {isModalOpen && (
           <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center px-4">
             <div className="bg-white p-6 rounded shadow-lg w-full max-w-sm text-center relative">
@@ -75,7 +77,7 @@ export default function SnipcartDemo() {
         )}
       </div>
 
-      {/* Snipcart root */}
+      {/* ✅ Snipcart root */}
       <div
         hidden
         id="snipcart"
