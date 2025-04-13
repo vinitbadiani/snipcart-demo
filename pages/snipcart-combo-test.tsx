@@ -90,3 +90,73 @@ export default function SnipcartComboTest() {
                     <option>Roasted Veggies</option>
                     <option>Lentil Soup</option>
                   </select>
+                </label>
+
+                {/* Delivery Day */}
+                <label className="block mb-4">
+                  <span className="block text-sm font-medium">Delivery Day</span>
+                  <select
+                    name="Delivery Day"
+                    className="w-full border px-3 py-2 rounded"
+                  >
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                  </select>
+                </label>
+
+                {/* Special Request */}
+                <label className="block mb-4">
+                  <span className="block text-sm font-medium">Special Request</span>
+                  <input
+                    type="text"
+                    name="Special Request"
+                    className="w-full border px-3 py-2 rounded"
+                    placeholder="e.g. No onions"
+                  />
+                </label>
+
+                {/* Add to Cart */}
+                <button
+                  type="button"
+                  className="snipcart-add-item bg-green-600 text-white px-4 py-2 rounded w-full"
+                  data-item-id="combo-individual"
+                  data-item-price="25.00"
+                  data-item-name="Combo - Individual"
+                  data-item-url="/snipcart-combo-test"
+                  data-item-custom1-name="Salad"
+                  data-item-custom1-options="Beet Salad|Farm Salad|Kale Caesar"
+                  data-item-custom2-name="Entree"
+                  data-item-custom2-options="Grilled Chicken|Stuffed Eggplant|Beef Kofta (Premium)"
+                  data-item-custom3-name="Side"
+                  data-item-custom3-options="Rice Pilaf|Roasted Veggies|Lentil Soup"
+                  data-item-custom4-name="Delivery Day"
+                  data-item-custom4-options="Tuesday|Wednesday|Thursday"
+                  data-item-custom5-name="Special Request"
+                >
+                  Add Combo to Cart
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="mt-4 block mx-auto text-sm text-gray-500 hover:underline"
+                >
+                  Cancel
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Snipcart root */}
+      <div
+        hidden
+        id="snipcart"
+        data-api-key="MzYyMjA1ZWMtNTI5NS00NGUwLWJkZWYtMWFmZTNjZmY0MGRiNjM4ODAwMzQ0MTg4MTM3ODI4"
+        data-config-modal-style="side"
+      ></div>
+    </>
+  )
+}
